@@ -1,7 +1,6 @@
 snippet php
 	<?php
 	${1}
-	?>
 snippet ec
 	echo "${1:string}"${2};
 snippet inc
@@ -35,7 +34,7 @@ snippet $_ SESSION['...']
 snippet /*
 	/**
 	 * ${1}
-	 **/
+	 */
 # Class - post doc
 snippet doc_cp
 	/**
@@ -43,21 +42,21 @@ snippet doc_cp
 	 *
 	 * @package ${2:default}
 	 * @author ${3:`g:snips_author`}
-	**/${4}
+	 */${4}
 # Class Variable - post doc
 snippet doc_vp
 	/**
 	 * ${1:undocumented class variable}
 	 *
 	 * @var ${2:string}
-	 **/${3}
+	 */${3}
 # Class Variable
 snippet doc_v
 	/**
 	 * ${3:undocumented class variable}
 	 *
 	 * @var ${4:string}
-	 **/
+	 */
 	${1:var} $${2};${5}
 # Class
 snippet doc_c
@@ -66,7 +65,7 @@ snippet doc_c
 	 *
 	 * @packaged ${4:default}
 	 * @author ${5:`g:snips_author`}
-	 **/
+	 */
 	${1:}class ${2:}
 	{${6}
 	} // END $1class $2
@@ -139,11 +138,9 @@ snippet class
 	/**
 	 * ${1}
 	 **/
-	class ${2:ClassName}
-	{
+	class ${2:ClassName} {
 		${3}
-		function ${4:__construct}(${5:argument})
-		{
+		public function ${4:__construct}(${5:argument}) {
 			${6:// code...}
 		}
 	}
@@ -169,7 +166,8 @@ snippet if
 snippet ife
 	if (${1:/* condition */}) {
 		${2:// code...}
-	} else {
+	}
+	else {
 		${3:// code...}
 	}
 	${4}
@@ -207,10 +205,20 @@ snippet foreach
 		${3:// code...}
 	}
 snippet fun
-	${1:public }function ${2:FunctionName}(${3})
-	{
+	${1:public }function ${2:FunctionName}(${3}) {
 		${4:// code...}
 	}
 # $... = array (...)
 snippet array
 	$${1:arrayName} = array('${2}' => ${3});${4}
+# My own snippets
+snippet pr
+	print "${1:string}"${2};
+snippet pr_
+	print_r($${1:variable});
+snippet var
+	var_dump($${1:variable});
+snippet pre
+	print '<pre>';
+	print_r($${1:variable});
+	print '</pre>';
